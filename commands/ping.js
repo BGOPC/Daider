@@ -6,7 +6,7 @@ module.exports = {
 		.setName('ping')
 		.setDescription('Latency and ping of the client'),
 	async execute(interaction) {
-		await interaction.reply({ content: 'pinging', ephemeral: true });
+		await interaction.deferReply();
 		await wait(2000);
 		await interaction.editReply({ content: `Websocket heartbeat: ${interaction.client.ws.ping}ms`, ephemeral:true });
 	},

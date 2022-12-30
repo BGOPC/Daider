@@ -1,0 +1,26 @@
+{
+    "name": "daider",
+    "version": "0.0.1",
+    "description": "A simple discordjs bot",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon index.js",
+        "lint": "eslint ."
+    },
+    "keywords": [
+        "discordjs",
+        "bot"
+    ],
+    "author": "BGOPC",
+    "license": "MIT",
+    "dependencies": {
+        "chalk": "^4.1.0",
+        "discord.js": "^14.7.1",
+        "dotenv": "^8.6.0",
+        "eslint": "^7.21.0"
+    },
+    "devDependencies": {
+        "@types/node": "^18.11.17",
+        "nodemon": "^2.0.20"
+    }
+}

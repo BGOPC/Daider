@@ -26,5 +26,8 @@ module.exports = {
         if (interaction.guild.members.me.permissions.has(PermissionsBitField.Flags.BanMembers) || interaction.guild.members.me.permissions.has(PermissionsBitField.Flags.Administrator)) {
             await interaction.guild.members.ban(target);
         }
+        else {
+            await interaction.editReply("I don't have permission to ban");
+        }
     },
 };

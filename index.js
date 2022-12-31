@@ -1,7 +1,7 @@
 const { Client, Events, GatewayIntentBits, Collection } = require('discord.js');
 require('dotenv').config();
 const chalk = require('chalk');
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildBans, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildPresences, GatewayIntentBits.GuildPresences, GatewayIntentBits.GuildMessages ] });
 const fs = require('node:fs');
 const path = require('node:path');
 client.commands = new Collection();

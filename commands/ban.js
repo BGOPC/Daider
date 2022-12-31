@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
+const { SlashCommandBuilder, PermissionFlagsBits, PermissionsBitField } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -23,6 +23,8 @@ module.exports = {
         const reason = interaction.options.getString('reason') ?? 'No reason provided';
 
         await interaction.reply(`Banning ${target.username} for reason: ${reason}`);
-        await interaction.guild.members.ban(target);
+        if (interaction.guild.members.me.permissions.has(PermissionsBitField.Flags.BanMembers) || interaction.guild.members.me.permissions.has(PermissionsBitField.Flags.Administrator)) {
+            await interaction.guild.members.ban(target);
+        }
     },
 };

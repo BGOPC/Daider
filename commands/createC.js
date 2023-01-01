@@ -8,7 +8,7 @@ module.exports = {
             option
                 .setName('name')
                 .setDescription('name of the channels')
-                .setRequired(false)
+                .setRequired(false),
         )
         .addIntegerOption(option =>
             option
@@ -25,8 +25,8 @@ module.exports = {
             return;
         }
         for (let index = 0; index <= amount; index++) {
-            let cr = interaction.guild.channels.create({name: name,type: ChannelType.GuildText});
-            Promise.all([cr,cr])
+            const cr = interaction.guild.channels.create({ name: name, type: ChannelType.GuildText });
+            Promise.all([cr, cr]);
         }
         await interaction.editReply({ content: "Done", ephemeral: true });
 

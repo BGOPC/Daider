@@ -22,6 +22,6 @@ module.exports = {
                 ? 100
                 : Number(amount) + 1;
 		await wait(2000);
-		await interaction.channel.bulkDelete(amount,true);
+		await interaction.channel.bulkDelete(amount, true);
 	},
 };

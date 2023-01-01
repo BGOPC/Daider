@@ -13,7 +13,7 @@ module.exports = {
             option
                 .setName('reason')
                 .setDescription('reason of ban??')
-                .setRequired(false)
+                .setRequired(false),
         )
         .setDefaultMemberPermissions(PermissionFlagsBits.BanMembers)
         .setDMPermission(false),

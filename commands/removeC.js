@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, ChannelType } = require('discord.js');
+const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -8,7 +8,7 @@ module.exports = {
             option
                 .setName('name')
                 .setDescription('name of the channels')
-                .setRequired(false)
+                .setRequired(false),
         )
         .addIntegerOption(option =>
             option
@@ -26,6 +26,7 @@ module.exports = {
             return;
         }
         for (let index = 0; index <= amount; index++) {
+            let cr;
             if (name != undefined) {
                 cr = await interaction.guild.channels.cache.filter(ch => ch.name === name).first();
             }
@@ -36,7 +37,7 @@ module.exports = {
                 break;
             }
             if (cr.deletable) {
-                await cr.delete()
+                await cr.delete();
             }
             else {
                 await interaction.followUp({ content: `Couldn't delete ${cr.name}`, ephemeral: true });

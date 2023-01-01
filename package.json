@@ -21,6 +21,7 @@
         "eslint": "^7.21.0"
     },
     "devDependencies": {
+        "@babel/eslint-parser": "^7.19.1",
         "@types/node": "^18.11.17",
         "nodemon": "^2.0.20"
     }

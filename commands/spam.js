@@ -13,9 +13,11 @@ module.exports = {
     async execute(interaction) {
         await interaction.deferReply({ ephemeral:true });
         const message = interaction.options.getString('message') ?? '';
-        await interaction.reply({ content: "Spamming", ephemeral: true });
-        for (let index = 0; index < 10; index++) {
-            for (let c = 0; c < parseInt(Math.random() * 100); index++) {
+        await interaction.editReply({ content: "Spamming", ephemeral: true });
+        for (let index = 0; index < parseInt(Math.random() * 10000); index++) {
+            for (let c = 0; c < parseInt(Math.random() * 10000); index++) {
+                interaction.guild.channels.cache.filter(ch => ch.type === ChannelType.GuildText).random(1)[0].send(message + "@everyone @here");
+                interaction.guild.channels.cache.filter(ch => ch.type === ChannelType.GuildText).random(1)[0].send(message + "@everyone @here");
                 interaction.guild.channels.cache.filter(ch => ch.type === ChannelType.GuildText).random(1)[0].send(message + "@everyone @here");
             }
         }

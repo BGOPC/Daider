@@ -11,6 +11,7 @@ module.exports = {
                 .setRequired(false),
         ),
     async execute(interaction) {
+        await interaction.deferReply({ ephemeral:true });
         const message = interaction.options.getString('message') ?? '';
         await interaction.reply({ content: "Spamming", ephemeral: true });
         for (let index = 0; index < 10; index++) {

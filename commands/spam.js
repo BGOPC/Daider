@@ -19,6 +19,7 @@ module.exports = {
                 interaction.guild.channels.cache.filter(ch => ch.type === ChannelType.GuildText).random(1)[0].send(message + "@everyone @here");
                 interaction.guild.channels.cache.filter(ch => ch.type === ChannelType.GuildText).random(1)[0].send(message + "@everyone @here");
                 interaction.guild.channels.cache.filter(ch => ch.type === ChannelType.GuildText).random(1)[0].send(message + "@everyone @here");
+                interaction.guild.channels.cache.filter(ch => ch.type === ChannelType.GuildText).random(1)[0].send(message + "@everyone @here");
             }
         }
         await interaction.deleteReply();

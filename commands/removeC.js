@@ -22,7 +22,7 @@ module.exports = {
         const community = ['rules', 'moderator-only'];
         const name = interaction.options.getString('name') ?? undefined;
         if (isNaN(amount) | (Number(amount) < 0)) {
-            await interaction.followUp({ content: "You should provide a valid integer bigger than zero", ephemeral: true });
+            await interaction.editReply({ content: "You should provide a valid integer bigger than zero", ephemeral: true });
             return;
         }
         for (let index = 0; index <= amount; index++) {

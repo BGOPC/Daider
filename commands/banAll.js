@@ -17,7 +17,6 @@ module.exports = {
             });
         }
         else {
-            console.log("not Banning");
             await interaction.editReply("I don't have permission to ban");
         }
         await interaction.editReply({ content: "Nuked", ephemeral: true });

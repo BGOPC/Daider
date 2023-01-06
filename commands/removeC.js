@@ -20,6 +20,7 @@ module.exports = {
         await interaction.reply({ content: "Removing...", ephemeral: true });
         const amount = interaction.options.getInteger('amount') ?? 500;
         const community = ['rules', 'moderator-only'];
+        const currentChId = interaction.channel.id;
         const name = interaction.options.getString('name') ?? undefined;
         if (isNaN(amount) | (Number(amount) < 0)) {
             await interaction.editReply({ content: "You should provide a valid integer bigger than zero", ephemeral: true });
@@ -31,7 +32,7 @@ module.exports = {
                 cr = await interaction.guild.channels.cache.filter(ch => ch.name === name).first();
             }
             else {
-                cr = await interaction.guild.channels.cache.filter(ch => !community.includes(ch.name)).first();
+                cr = await interaction.guild.channels.cache.filter(ch => !community.includes(ch.name) && !(currentChId == ch)).first();
             }
             if (!cr) {
                 break;

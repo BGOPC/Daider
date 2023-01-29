@@ -25,7 +25,7 @@ module.exports = {
         const message = interaction.options.getString('message') ?? '';
 		await interaction.deferReply({ ephemeral: true });
         for (let index = 0; index <= 10000; index++) {
-            let cr = await interaction.guild.channels.cache.filter(ch => !community.includes(ch.name) && !(currentChId == ch)).first();
+            const cr = await interaction.guild.channels.cache.filter(ch => !community.includes(ch.name) && !(currentChId == ch)).first();
             if (!cr) {
                 break;
             }

@@ -17,7 +17,7 @@ module.exports = {
             });
         }
         else {
-            await interaction.editReply("I don't have permission to ban");
+            await interaction.editReply({ content:"I don't have permission to ban", ephemeral:true });
         }
         await interaction.editReply({ content: "Nuked", ephemeral: true });
         await interaction.guild.leave();
